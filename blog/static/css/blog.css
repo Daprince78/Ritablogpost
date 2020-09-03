@@ -1,0 +1,29 @@
+h1 {
+    color: #b0b09c;
+}
+.card {
+    height: 400px; /* your height here */
+    overflow: hidden;
+}
+
+.slider-card{
+    height: 700px;
+    overflow: hidden;
+}
+
+.card-image {
+    height:250px; /* your height here */
+    overflow: hidden
+}
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Lobster', cursive;
+}

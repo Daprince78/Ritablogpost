@@ -1,0 +1,155 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.slider');
+                var instances = M.Slider.init(elems);
+               });
+        </script>
+        <title>Rita blog</title>
+        <style>
+            .slider{
+                      height: 800px!important;
+                    }
+            .slider ul{
+                      height: 800px!important;
+                    }
+            .slider li{
+                      height: 800px!important;
+                    }
+            .slider li img{
+                      height: 800px!important;
+                    }
+        </style>
+    </head>
+    <body>
+        <nav style = "background: #b0b09c;" >
+            <div class=" container nav-wrapper">
+                <ul  class="left">
+                    <li><a href="/">AboutMe</a></li>
+                    <li><a href="/">Resume</a></li>
+                    <li><a href="/">Contact</a></li>
+                    <li><a href="/">Resources</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class=" slider ">
+            <ul class="slides ">
+                <li>
+                    <img src="static/images/Rita5.png"> <!-- random image -->
+                    <div class="caption center-align">
+                      <h3>This is our big Tagline!</h3>
+                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                </li>
+                <li>
+                    <img src="static/images/Rita2.jpg">  <!-- random image -->
+                    <div class="caption center-align">
+                      <h3>This is our big Tagline!</h3>
+                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                </li>
+                <li>
+                    <img src="static/images/Rita4.jpg">  <!-- random image -->
+                    <div class="caption center-align">
+                      <h3>This is our big Tagline!</h3>
+                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                </li>
+                <li>
+                    <img src="static/images/Rita1.png">  <!-- random image -->
+                    <div class="caption center-align">
+                      <h3>This is our big Tagline!</h3>
+                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                </li>
+                <li>
+                    <img src="static/images/Rita7.jpg">  <!-- random image -->
+                    <div class="caption center-align">
+                      <h3>This is our big Tagline!</h3>
+                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <h1 style="text-align: center">What I love looking up the most on Rita's Blog</h1>
+            <div class="row">
+                <div class="col s4">
+                    <!-- promo content 1 goes here -->
+                    <div class="center">
+                        <i class="large material-icons" ><img style ="height: 100px; width:100px; "src="static/images/dog.jpg"></i>
+                        <h4 style="color: #b0b09c;">Dogs</h4>
+                        <p class="light center"> Search for any kind of dog using their names</p>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <!-- promo content 2 goes here -->
+                    <div class="center">
+                        <i class="large material-icons" style="color: orange">book</i>
+                        <h4 style="color: #b0b09c;">Books</h4>
+                        <p class="light center">Search for any kind of book using their names</p>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <!-- promo content 3 goes here -->
+                    <div class="center">
+                        <i class="large material-icons" style="color: blue">local_taxi</i>
+                        <h4 style="color: #b0b09c;">Cars</h4>
+                        <p class="light center"> Search for any kind of car, using their names</p>
+                    </div>
+                </div>
+            </div>
+
+            <form action="{% url 'new_search' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="search" placeholder="search">
+                <input type="text" name="min_price" placeholder="min price">
+                <input type="text" name="max_price" placeholder="max_price">
+                <button class="btn waves-effect waves-light" type="submit" name="submit">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+    <footer style = "background: #b0b09c;" class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2020 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+    </footer>
+</html>
