@@ -7,7 +7,7 @@ from django.shortcuts import render
 from .models import Search
 
 # created a variable called BASIC_CRAIGSLIST_URL to get the url that we will be scrapping with beautiful soup
-BASIC_CRAIGSLIST_URL = 'https://accra.craigslist.org/search/?query={}'
+BASIC_CRAIGSLIST_URL = 'https://www.buyadog.com.ng/search/?query={}'
 BASE_IMAGE_URL = 'https://images.craigslist.org/{}_300x300.jpg'
 
 
